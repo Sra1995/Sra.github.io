@@ -40,6 +40,16 @@
       background-color: #111;
     }
 
+    /* Hide the nested lists by default */
+    nav ul li ul {
+      display: none;
+    }
+
+    /* Show the nested lists on hover */
+    nav ul li:hover > ul {
+      display: block;
+    }
+
     .section {
       padding: 50px;
     }
