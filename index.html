@@ -14,7 +14,7 @@
     nav {
       background-color: #333;
       color: #fff;
-      padding: 15px;
+      padding: 10px 0;
     }
 
     nav ul {
@@ -22,10 +22,12 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
     }
 
     nav ul li {
-      float: left;
+      margin: 0 15px;
     }
 
     nav ul li a {
@@ -38,16 +40,6 @@
 
     nav ul li a:hover {
       background-color: #111;
-    }
-
-    /* Hide the nested lists by default */
-    nav ul li ul {
-      display: none;
-    }
-
-    /* Show the nested lists on hover */
-    nav ul li:hover > ul {
-      display: block;
     }
 
     .section {
@@ -72,39 +64,9 @@
 <body>
   <nav>
     <ul>
-      <li><a href="#about">About Me</a></li>
-      <li>
-        <a href="javascript:void(0)">Projects &#9662;</a>
-        <ul>
-          <li>
-            <a href="javascript:void(0)">Marketing</a>
-            <ul>
-              <li><a href="#project1">Project 1</a></li>
-              <li><a href="#project2">Project 2</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:void(0)">Finance</a>
-            <ul>
-              <li><a href="#project3">Project 3</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:void(0)">Data Science</a>
-            <ul>
-              <li><a href="#project4">Project 4</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:void(0)">Management</a>
-            <ul>
-              <li><a href="#project5">Project 5</a></li>
-              <li><a href="#project6">Project 6</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#contact">Contact Me</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -113,34 +75,9 @@
     <p>Add your introduction and information about yourself here.</p>
   </div>
 
-  <div class="section" id="project1">
-    <h2>Project 1</h2>
-    <p>Add details about your first marketing project here.</p>
-  </div>
-
-  <div class="section" id="project2">
-    <h2>Project 2</h2>
-    <p>Add details about your second marketing project here.</p>
-  </div>
-
-  <div class="section" id="project3">
-    <h2>Project 3</h2>
-    <p>Add details about your finance project here.</p>
-  </div>
-
-  <div class="section" id="project4">
-    <h2>Project 4</h2>
-    <p>Add details about your data science project here.</p>
-  </div>
-
-  <div class="section" id="project5">
-    <h2>Project 5</h2>
-    <p>Add details about your first management project here.</p>
-  </div>
-
-  <div class="section" id="project6">
-    <h2>Project 6</h2>
-    <p>Add details about your second management project here.</p>
+  <div class="section" id="projects">
+    <h1>Projects</h1>
+    <p>Add your projects here.</p>
   </div>
 
   <div class="section" id="contact">
