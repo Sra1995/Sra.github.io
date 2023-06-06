@@ -1,10 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <title>SRA</title>
+  <title>Portfolio</title>
+  <-- Add your own styles here -->
+  <style>
+    
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    nav ul li {
+      float: left;
+    }
+
+    nav ul li a {
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      background-color: #111;
+    }
+
+    .section {
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-    <p> Hello darkness my old friend. I have come to talk with you again.</p>
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li>
+        <a href="javascript:void(0)">Projects &#9662;</a>
+        <ul>
+          <li><a href="#project1">Project 1</a></li>
+          <li><a href="#project2">Project 2</a></li>
+          <li><a href="#project3">Project 3</a></li>
+        </ul>
+      </li>
+      <li><a href="#contact">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <div class="section" id="about">
+    <h1>About Me</h1>
+    <p>Add your introduction and information about yourself here.</p>
+  </div>
+
+  <div class="section" id="project1">
+    <h2>Project 1</h2>
+    <p>Add details about your first project here.</p>
+  </div>
+
+  <div class="section" id="project2">
+    <h2>Project 2</h2>
+    <p>Add details about your second project here.</p>
+  </div>
+
+  <div class="section" id="project3">
+    <h2>Project 3</h2>
+    <p>Add details about your third project here.</p>
+  </div>
+
+  <div class="section" id="contact">
+    <h1>Contact Me</h1>
+    <p>Add your contact information and a contact form here.</p>
+  </div>
 </body>
 </html>
