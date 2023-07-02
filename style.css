@@ -9,11 +9,17 @@ align-content: center;
 min-height: 100vh;
 }
 
+canvas {
+  opacity: 0.5;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f6f6f6;
+    background: #060e1b;
+    overflow: hidden;
   }
 
   nav {
