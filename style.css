@@ -15,10 +15,12 @@ min-height: 100vh;
 }
 
 body {
-  
-    background: #060e1b;
-    overflow: hidden;
-  }
+  background-color: #000000;
+  background-image: radial-gradient(#ffffff 1px, transparent 1px), radial-gradient(#ffffff 2px, transparent 2px), radial-gradient(#ffffff 3px, transparent 3px);
+  background-position: 0 0, 0 0, 0 0;
+  background-size: 30px 30px, 60px 60px, 90px 90px;
+  background-repeat: repeat, repeat, repeat;
+}
 
   nav {
     background-color: #000;
