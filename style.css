@@ -57,6 +57,7 @@ div.container a
 .purple
 {
     background: #673ab7;
+
 }
 
 
@@ -101,7 +102,7 @@ div.highlightTextIn a:before
 
 canvas {
   opacity: 1;
-  height: 3em;
+  height: 5em;
   width: 100%;
   object-fit: cover;
   position: relative;
