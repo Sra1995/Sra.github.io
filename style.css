@@ -40,7 +40,7 @@ div.container
 	text-align: center;
 }
 
-div.container a
+div.container nav
 {
     color: #FFF;
     text-decoration: none;
@@ -52,6 +52,10 @@ div.container a
     cursor: pointer;
 }
 
+.purple
+{
+    background: #673ab7;
+}
 
 /* Highlight text out  */
 div.highlightTextOut a
