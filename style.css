@@ -101,9 +101,10 @@ div.highlightTextIn a:before
 
 canvas {
   opacity: 1;
-  height: 1em;
+  height: 3em;
   width: 100%;
   object-fit: cover;
-  
+  position: relative;
+  z-index: 0;
 }
 
