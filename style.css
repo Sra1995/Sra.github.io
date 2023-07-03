@@ -2,7 +2,8 @@
 
 html, body
 {
-    margin: 0px;
+  margin: 0px;
+
 }
 
 header, footer
@@ -40,6 +41,7 @@ div.container
 	text-align: center;
 }
 
+
 div.container a
 {
     color: #FFF;
@@ -56,6 +58,8 @@ div.container a
 {
     background: #673ab7;
 }
+
+
 /* Highlight text out  */
 div.highlightTextOut a
 {
@@ -92,3 +96,14 @@ div.highlightTextIn a:before
 {
     transform: scale(1.2);
 } 
+
+/*canvas bar showing galaxy stars*/
+
+canvas {
+  opacity: 1;
+  height: 5em;
+  width: 100%;
+  object-fit: cover;
+  
+}
+
