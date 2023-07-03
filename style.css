@@ -9,7 +9,7 @@ header, footer
 {
     font-family: Raleway;
     margin: 0 auto;
-	padding: 5em 3em;
+	padding: 4em 1em;
 	text-align: center;
     background: #555;
 }
@@ -36,11 +36,11 @@ div.container
 {
     font-family: Raleway;
     margin: 0 auto;
-	padding: 10em 3em;
+	padding: 1em 1em;
 	text-align: center;
 }
 
-div.container nav
+div.container a
 {
     color: #FFF;
     text-decoration: none;
@@ -56,40 +56,3 @@ div.container nav
 {
     background: #673ab7;
 }
-
-/* Highlight text out  */
-div.highlightTextOut a
-{
-    color: rgba(255, 255, 255, 0.3); 
-}
-
-div.highlightTextOut a:before, div.highlightTextIn a:before
-{
-    position: absolute;
-    color: #FFF;
-    top: 0px;
-    left: 0px;
-    padding: 10px;
-    overflow: hidden;
-    content: attr(alt);
-    transition: all 0.3s;
-    transform: scale(0.8);
-    opacity: 0;
-} 
-
-div.highlightTextOut a:hover:before, div.highlightTextIn a:hover:before
-{
-    transform: scale(1);
-    opacity: 1;
-}
-
-/* Highlight text in  */
-div.highlightTextIn a
-{
-    color: rgba(0, 0, 0, 0.4); 
-}
-
-div.highlightTextIn a:before
-{
-    transform: scale(1.2);
-} 
