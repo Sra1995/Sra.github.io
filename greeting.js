@@ -21,4 +21,4 @@ function getGreeting() {
   const greetingElement = document.getElementById("greeting");
   const greeting = getGreeting();
   greetingElement.textContent = greeting;
-  
+
