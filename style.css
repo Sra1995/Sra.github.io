@@ -156,7 +156,7 @@ canvas {
 
 /* Styles for the "About Me" section */
 .about-background {
-  background-image: url('asst/carina_nircam_final-5mb.jpg');
+  background-image: url('asst/carina_nircam_final-5mb.jpg'); 
   background-size: cover;
   background-position: center;
   height: 400px; /* Adjust the height as needed */
@@ -172,36 +172,14 @@ canvas {
   color: #fff; /* Text color */
   padding: 10px 20px;
   border-radius: 5px;
+  text-align: center;
+}
+
+.about-background h1 #greeting {
+  display: inline; /* Display the greeting on the same line as the title */
 }
 
 .about-content {
   text-align: center;
   padding: 20px;
 }
-
-/* Styles for the "Greeting" section */
-.greeting-background {
-  background-image: url('your-image.jpg'); /* Replace 'your-image.jpg' with the path to your background image */
-  background-size: cover;
-  background-position: center;
-  height: 400px; /* Adjust the height as needed */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.greeting-background h1 {
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
-  color: #fff; /* Text color */
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-.greeting-content {
-  text-align: center;
-  padding: 20px;
-}
-
-
