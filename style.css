@@ -152,3 +152,29 @@ canvas {
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
+/* Styles for the "About Me" section */
+.about-background {
+  background-image: url('asst/carina_nircam_final-5mb.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Adjust the height as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.about-background h1 {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+  color: #fff; /* Text color */
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.about-content {
+  text-align: center;
+  padding: 20px;
+}
