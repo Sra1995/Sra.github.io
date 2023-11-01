@@ -204,27 +204,4 @@ canvas {
   padding: 20px;
 }
 
-/* Styles for the "About Me" section (unchanged) */
-.about-background {
-  background-image: url('your-image2.jpg'); /* Replace 'your-image2.jpg' with the path to your background image */
-  background-size: cover;
-  background-position: center;
-  height: 400px; /* Adjust the height as needed */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
 
-.about-background h1 {
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
-  color: #fff; /* Text color */
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-.about-content {
-  text-align: center;
-  padding: 20px;
-}
