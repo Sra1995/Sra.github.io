@@ -1,25 +1,32 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
+/* Lock the aspect ratio for iPhone 12 Pro Max */
+@media screen and (max-width: 1284px) and (min-aspect-ratio: 19.5/9) {
+  .project {
+    flex-basis: calc(50% - 20px); /* Set the aspect ratio for iPhone 12 Pro Max-like screens */
+  }
+}
+
 /* Lock the aspect ratio for phones */
 @media screen and (max-width: 768px) {
-    .project {
-      flex-basis: calc(100% - 20px); /* Set the full width for phones */
-    }
+  .project {
+    flex-basis: calc(100% - 20px); /* Set the full width for other phones */
   }
-  
-  /* Lock the aspect ratio for different display resolutions (industry standard) */
-  @media screen and (min-resolution: 192dpi) {
-    .project {
-      flex-basis: calc(25% - 20px); /* 4 columns for high-resolution displays */
-    }
+}
+
+/* Lock the aspect ratio for different display resolutions (industry standard) */
+@media screen and (min-resolution: 192dpi) {
+  .project {
+    flex-basis: calc(25% - 20px); /* 4 columns for high-resolution displays */
   }
-  
-  @media screen and (min-resolution: 96dpi) and (max-resolution: 191dpi) {
-    .project {
-      flex-basis: calc(33.33% - 20px); /* 3 columns for standard-resolution displays */
-    }
+}
+
+@media screen and (min-resolution: 96dpi) and (max-resolution: 191dpi) {
+  ..project {
+    flex-basis: calc(33.33% - 20px); /* 3 columns for standard-resolution displays */
   }
-  
+}
+
 html, body
 {
   margin: 0px;
