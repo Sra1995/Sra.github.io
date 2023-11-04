@@ -1,0 +1,12 @@
+document.getElementById("Basic-button").addEventListener("click", function () {
+    document.getElementById("about-text").innerHTML = "I am a graduate student currently pursuing a Master's degree in Computer Science with a strong foundation in Business Administration. With experience as a business analyst, including roles in the healthcare sector, I possess a unique blend of analytical and technical skills. I have a passion for coding, which I often use to solve real-world problems that arise in my daily life. Eager to contribute my expertise to the ever-evolving tech landscape and explore innovative solutions.";
+  });
+  
+  document.getElementById("nerdy-button").addEventListener("click", function () {
+    document.getElementById("about-text").innerHTML = "I'm like a mad scientist in the world of graduate studies, brewing up a storm with my Master's degree in Computer Science, all while sprinkling in some secret sauce from my Business Administration background.<br><br>As a business analyst, I've been the 'go-to' Sherlock Holmes of the healthcare sector, solving mysteries left and right.<br><br>But my secret? I'm a code whisperer, turning everyday conundrums into digital magic tricks. When life throws lemons at me, I make lemon-flavored code – because why not? 🍋💻<br><br>Now, I'm itching to sprinkle my tech wizardry and unravel even more riddles in the ever-evolving tech landscape. Got a puzzle? I've got the code – let's make some magic together!";
+  });
+  
+  document.getElementById("funny-button").addEventListener("click", function () {
+    document.getElementById("about-text").innerHTML = "As a graduate student on the quest for a Master's degree in Computer Science, I bring a unique blend of technical prowess and a dash of Business Administration savvy to the table.<br><br>With a background in business analysis, I've been the 'go-to' Sherlock Holmes, sniffing out solutions in the complex world of healthcare. However, it doesn't end there. I'm not just a code enthusiast; I'm the secret sauce behind the scenes.<br><br>I tackle real-world challenges with a side of coding finesse, transforming lemons into lemonade (and occasionally, into code). 🍋💻<br><br>My aim? To contribute my expertise to the ever-evolving tech landscape and unlock innovative solutions. Ready to team up for some serious tech alchemy?";
+  });
+  

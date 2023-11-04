@@ -1,5 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
+
 /* Lock the aspect ratio for iPhone 12 Pro Max */
 @media screen and (max-width: 1284px) and (min-aspect-ratio: 19.5/9) {
   .project {
@@ -27,27 +28,33 @@
   }
 }
 
-html, body
-{
-  margin: 0px;
+body {
+  background-image: url('asst/carina_nircam_final-5mb.jpg');
+  background-size: cover;
+  background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+  margin: 0;
+}
 
+/* Update the .project section's background to be transparent */
+.project {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 header, footer
 {
-    font-family: Raleway;
-    margin: 0 auto;
-	padding: 4em 1em;
-	text-align: center;
-    background: #555;
+  font-family: Raleway;
+  margin: 0 auto;
+  padding: 4em 1em;
+  text-align: center;
+  background: #555;
 }
 
 header h1
 {
-    color: #AAA;
-    font-size: 40px;
-    font-weight: lighter;
-    margin-bottom: 5px;
+  color: #AAA;
+  font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 5px;
 }
 
 header span
@@ -60,26 +67,68 @@ footer span
   color: #AAA;
 }
 
-div.container
-{
-    font-family: Raleway;
-    margin: 0 auto;
-	padding: 1em 1em;
-	text-align: center;
+/* Custom styling for the navigation bar */
+div.container {
+  font-family: Raleway;
+  margin: 0 auto;
+  padding: 1em 1em;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7); /* Adjust the transparency as needed */
+}
+
+div.container a {
+  color: #FFF;
+  text-decoration: none;
+  font: 20px Raleway;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+/* Additional styling for the image and text in the navigation bar */
+div.container h1 {
+  color: #FFF;
+  font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+}
+
+div.container span {
+  color: #FFF;
+  font-size: 18px; /* Adjust the font size as needed */
 }
 
 
-div.container a
-{
-    color: #FFF;
-    text-decoration: none;
-    font: 20px Raleway;
-    margin: 0px 10px;
-    padding: 10px 10px;
-    position: relative;
-    z-index: 0;
-    cursor: pointer;
+
+/* Custom styling for the transparent background */
+.about-content {
+  /*border-radius: 5px;*/
+  text-align: center;
+  height: 295px;
+  margin-top: 250px;
+  margin-bottom: 250px;
 }
+
+/* Adjust the styling for the "Welcome to Sajjad's Portfolio" text */
+div.about-background h1 {
+  padding:1em;
+  color: #FFF;
+  font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  text-align: center;
+  margin-top: 250px;
+  margin-bottom: 250px;
+}
+
+div.about-background span {
+  color: #FFF;
+  font-size: 18px; /* Adjust the font size as needed */
+}
+
+
 
 .purple
 {
@@ -137,7 +186,26 @@ canvas {
 }
 
 
-/* portfolio grid*/
+
+/* Center the text within the "Projects" section */
+#PORTFOLIO {
+  text-align: center;
+  color: white;
+}
+
+/* Increase the width of the dark transparent background */
+#PORTFOLIO h1 {
+  background: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+  color: #fff; /* Text color */
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center; /* Center the text horizontally */
+  position: relative;
+  display: inline-block;
+  margin: 20px auto;
+  width: 80%; /* Adjust the width as needed */
+}
+
 
 .project-grid {
   display: flex;
@@ -156,10 +224,7 @@ canvas {
 
 /* Styles for the "About Me" section */
 .about-background {
-  background-image: url('asst/carina_nircam_final-5mb.jpg'); 
-  background-size: cover;
-  background-position: center;
-  height: 400px; /* Adjust the height as needed */
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -184,3 +249,44 @@ canvas {
   padding: 20px;
 }
 
+/* Custom styling for the text within the transparent box */
+.about-content p {
+  background: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+  color: #fff; /* Text color */
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 600px; /* Set the width as needed */
+  margin: 0 auto; /* Center the box horizontally */
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px; /* Adjust spacing as needed */
+}
+
+/* Adjust the minimum height for the About Me section */
+#ABOUT {
+  min-height: 800px; /* Adjust the height as needed */
+}
+
+/* Center the text within the "Contact Me" section */
+#CONTACT {
+  color: #FFF;
+  font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Add background color to the "Contact Me" section */
+#CONTACT p {
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+  color: #fff; /* Text color */
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 600px; /* Set the width as needed */
+  margin: 0 auto; /* Center the box horizontally */
+}
