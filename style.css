@@ -204,6 +204,7 @@ canvas {
   display: inline-block;
   margin: 20px auto;
   width: 80%; /* Adjust the width as needed */
+  margin-top: 250px;
 }
 
 
