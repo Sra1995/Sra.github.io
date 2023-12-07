@@ -27,7 +27,7 @@
   <div class="about-content">
     <div class="text-box">
       <p id="about-text">Please press your preferred option for the About me section from below.</p>
-      <div class="button-container">
+      <div class="button-container" >
         <button id="Basic-button">Basic</button>
         <button id="nerdy-button">Nerdy</button>
         <button id="funny-button">Funny</button>
@@ -41,36 +41,36 @@
 
 
 
+<div class="section" id="PORTFOLIO">
+  <h1>Projects</h1>
+
   <div class="section" id="PORTFOLIO">
-    <h1>Projects</h1>
-    <div class="project-grid">
-      <div class="project">
-        <h2>Project 1</h2>
-        <p>Add details about your first project here.</p>
-        <a href="">Link to files on GitHub</a>
-      </div>
-      <div class="project">
-        <h2>Project 2</h2>
-        <p>Add details about your second project here.</p>
-        <a href="">Link to files on GitHub</a>
-      </div>
-      <div class="project">
-        <h2>Project 3</h2>
-        <p>Add details about your third project here.</p>
-        <a href="">Link to files on GitHub</a>
-      </div>
-      <div class="project">
-        <h2>Project 4</h2>
-        <p>Add details about your third project here.</p>
-        <a href="">Link to files on GitHub</a>
-      </div>
-      <div class="project">
-        <h2>Project 5</h2>
-        <p>Add details about your third project here.</p>
-        <a href="">Link to files on GitHub</a>
-      </div>
+    <div class="filter-buttons">
+      <button data-category="all">All</button>
+      <button data-category="architecture">Computer Architecture</button>
+      <button data-category="analysis">Data Analysis</button>
+      <button data-category="databases">Databases</button>
+      <button data-category="algorithm">Algorithm Analysis</button>
     </div>
+
+
+  <div class="project-grid">
+    <div class="project" data-category="architecture">
+      <h2>Project 1</h2>
+      <p>Add details about your first project here.</p>
+      <a href="">Link to files on GitHub</a>
+    </div>
+
+    <div class="project" data-category="analysis">
+      <h2>Project 2</h2>
+      <p>Add details about your second project here.</p>
+      <a href="">Link to files on GitHub</a>
+    </div>
+
+    <!-- Repeat for other projects with appropriate categories -->
+
   </div>
+</div>
 
 
 
@@ -90,6 +90,7 @@
 <script src="greeting.js"></script>
 <script src="aboutme.js"></script>
 <script src="neon.js"></script>
+<script src="filter_proj.js"></script>
 </body>
 
 

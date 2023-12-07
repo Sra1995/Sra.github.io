@@ -261,10 +261,7 @@ canvas {
   margin: 0 auto; /* Center the box horizontally */
 }
 
-.button-container {
-  text-align: center;
-  margin-top: 20px; /* Adjust spacing as needed */
-}
+
 
 /* Adjust the minimum height for the About Me section */
 #ABOUT {
@@ -290,4 +287,48 @@ canvas {
   text-align: center;
   max-width: 600px; /* Set the width as needed */
   margin: 0 auto; /* Center the box horizontally */
+}
+
+
+/* project filtering */
+
+
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* Add these styles to your existing CSS code */
+.button-container button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  transition: background-color 0.3s;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.button-container button:hover {
+  background-color: #0056b3;
 }
