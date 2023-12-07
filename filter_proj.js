@@ -11,15 +11,19 @@ document.addEventListener('DOMContentLoaded', function () {
           project.style.display = 'none';
         });
   
-        // Show projects that match the selected category or show all if 'All' is selected
+        // Show projects that match any of the selected categories or show all if 'All' is selected
         if (category === 'all') {
           projects.forEach(project => {
             project.style.display = 'block';
           });
         } else {
-          const filteredProjects = document.querySelectorAll(`.project[data-category="${category}"]`);
-          filteredProjects.forEach(project => {
-            project.style.display = 'block';
+          const selectedCategories = category.split(' ');
+          projects.forEach(project => {
+            const projectCategories = project.getAttribute('data-category').split(' ');
+  
+            if (selectedCategories.some(cat => projectCategories.includes(cat))) {
+              project.style.display = 'block';
+            }
           });
         }
       });

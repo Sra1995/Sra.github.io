@@ -38,6 +38,8 @@ body {
 /* Update the .project section's background to be transparent */
 .project {
   background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  border: none;
 }
 
 header, footer
