@@ -279,6 +279,15 @@ canvas {
   text-align: center;
 }
 
+/* Contact Header*/
+#CONTACT h1 {
+  font-size: 40px; /* Adjust the font size as needed */
+  font-weight: lighter;
+  margin-bottom: 5px;
+  text-align: center;
+  color: white; /* Set the text color */
+}
+
 /* Add background color to the "Contact Me" section */
 #CONTACT p {
   font-size: 16px;
