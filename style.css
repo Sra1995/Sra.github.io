@@ -42,7 +42,7 @@ body {
   border: none;
 }
 
-header, footer
+header
 {
   font-family: Raleway;
   margin: 0 auto;
@@ -64,10 +64,7 @@ header span
     color: #222;
 }
 
-footer span
-{
-  color: #AAA;
-}
+
 
 /* Custom styling for the navigation bar */
 div.container {
@@ -180,11 +177,28 @@ div.highlightTextIn a:before
 
 canvas {
   opacity: 1;
-  height: 5em;
+  height: 100%;
   width: 100%;
   object-fit: cover;
-  position: relative;
+  position: absolute;
   z-index: 0;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Place the canvas behind the text */
+}
+
+.footer {
+  position: relative;
+  text-align: center;
+  /*background: rgba(0, 0, 0, 0.1); /* Dark transparent background */
+  color: #fff; /* Text color */
+  padding: 20px;
+  margin-top: 50px; /* Adjust spacing as needed */
+}
+
+.footer p {
+  position: relative;
+  z-index: 1; /* Ensure the text is in front of the canvas */
 }
 
 
