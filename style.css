@@ -1,6 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
-
+/*---------- Global style ----------*/
 /* Lock the aspect ratio for iPhone 12 Pro Max */
 @media screen and (max-width: 1284px) and (min-aspect-ratio: 19.5/9) {
   .project {
@@ -41,7 +41,7 @@ body {
   border-radius: 5px;
   border: none;
 }
-
+/*---------- Page Header style ----------*/
 header
 {
   font-family: Raleway;
@@ -64,7 +64,7 @@ header span
     color: #222;
 }
 
-
+/*---------- Different DIV container styles ----------*/
 
 /* Custom styling for the navigation bar */
 div.container {
@@ -99,7 +99,7 @@ div.container span {
   font-size: 18px; /* Adjust the font size as needed */
 }
 
-
+/*---------- About Me section style ----------*/
 
 /* Custom styling for the transparent background */
 .about-content {
@@ -236,6 +236,21 @@ canvas {
   margin: 10px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust the link styles within the projects */
+.project a {
+  color: #2196F3; /* Set the link color to the desired shade of blue */
+  text-decoration: none;
+  transition: color 0.3s; /* Add transition for a smooth color change */
+}
+
+.project a:hover {
+  color: #1565C0; /* Change the color when the link is hovered */
+}
+
+.project a:active {
+  color: #0D47A1; /* Change the color when the link is clicked */
 }
 
 
