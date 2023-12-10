@@ -390,6 +390,7 @@ canvas {
   color: #fff;
   transition: background-color 0.3s;
   text-align: center;
+  z-index: 1;
 }
 
 #goTopBtn:hover {
