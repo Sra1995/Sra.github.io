@@ -72,7 +72,7 @@ div.container {
   margin: 0 auto;
   padding: 1em 1em;
   text-align: center;
-  background: rgba(0, 0, 0, 0.7); /* Adjust the transparency as needed */
+  background: rgba(0, 0, 0, 0.7); /* Adjust the transparency */
 }
 
 div.container a {
@@ -96,7 +96,7 @@ div.container h1 {
 
 div.container span {
   color: #FFF;
-  font-size: 18px; /* Adjust the font size as needed */
+  font-size: 18px; 
 }
 
 /*---------- About Me section style ----------*/
@@ -124,7 +124,7 @@ div.about-background h1 {
 
 div.about-background span {
   color: #FFF;
-  font-size: 18px; /* Adjust the font size as needed */
+  font-size: 18px; 
 }
 
 
@@ -193,7 +193,7 @@ canvas {
   /*background: rgba(0, 0, 0, 0.1); /* Dark transparent background */
   color: #fff; /* Text color */
   padding: 20px;
-  margin-top: 50px; /* Adjust spacing as needed */
+  margin-top: 60px; 
 }
 
 .footer p {
@@ -219,7 +219,7 @@ canvas {
   position: relative;
   display: inline-block;
   margin: 20px auto;
-  width: 80%; /* Adjust the width as needed */
+  width: 80%; 
   margin-top: 250px;
 }
 
@@ -265,7 +265,7 @@ canvas {
 }
 
 .about-background h1 {
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+  background-color: rgba(0, 0, 0, 0.5); 
   color: #fff; /* Text color */
   padding: 10px 20px;
   border-radius: 5px;
@@ -288,7 +288,7 @@ canvas {
   padding: 20px;
   border-radius: 5px;
   text-align: center;
-  max-width: 600px; /* Set the width as needed */
+  max-width: 600px; 
   margin: 0 auto; /* Center the box horizontally */
 }
 
@@ -296,7 +296,7 @@ canvas {
 
 /* Adjust the minimum height for the About Me section */
 #ABOUT {
-  min-height: 800px; /* Adjust the height as needed */
+  min-height: 800px; 
 }
 
 /* Center the text within the "Contact Me" section */
@@ -310,7 +310,7 @@ canvas {
 
 /* Contact Header*/
 #CONTACT h1 {
-  font-size: 40px; /* Adjust the font size as needed */
+  font-size: 40px; 
   font-weight: lighter;
   margin-bottom: 5px;
   text-align: center;
@@ -325,7 +325,7 @@ canvas {
   padding: 20px;
   border-radius: 5px;
   text-align: center;
-  max-width: 600px; /* Set the width as needed */
+  max-width: 600px; 
   margin: 0 auto; /* Center the box horizontally */
 }
 
