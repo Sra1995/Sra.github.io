@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project: Example Project</title>
+  <link rel="stylesheet" href="./style.css"> <!-- Link to your existing CSS file -->
+  <script defer src="scripts/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <link rel="icon" href="/asst/favicon.ico" type="image/x-icon"> <!-- 16x16-->
+  <link rel="icon" href="asst/portfolio_icon.ico" type="image/x-icon"> <!--48x48-->
+  <link rel="icon" href="asst/portfolio-96.png" type="image/png"> <!--png icon -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #fffcfc;
+    }
+
+    p {
+      color: #fffafa;
+    }
+
+    .graph {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    code {
+      display: block;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+ <div class="container purple highlightTextOut"> 
+    <a alt="HOME" href="index.html">HOME</a>
+    <a alt="PORTFOLIO" href=index.html#PORTFOLIO>PORTFOLIO</a>
+    <a alt="ABOUT" href="index.html#about-text">ABOUT</a>
+    <a alt="CONTACT" href="index.html#CONTACT">CONTACT</a>
+  
+  </div>
+
+<div class="container">
+  <h1>FileSorter Pro</h1>
+
+  <h2>Objective</h2>
+  <p>
+    
+    The script aims to automatically organize files in a specified directory based on their types 
+    (e.g., audio, video, images, documents, etc.) into corresponding destination folders. see picture below of the script output.
+  </p>
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/Folder after.png" alt="Example Graph" style="width: 600px; height: 300px;">
+    
+  </div>
+  <h6>Picture above showcase download folder after being sorter with no cluter</h6>
+
+  <h2>Algorithm</h2>
+  <pre>
+  <code>
+ 1. Initialization:
+    - Define the source directory (`source_dir`) and destination directories for each file type.
+ 
+ 2. File Type Definitions:
+    - Define lists of file extensions for different categories 
+      (audio, video, images, documents, etc.).
+ 
+ 3. Move File Function:
+    - Create a function (`move_file`) to move files to their respective destinations.
+      - Check if the file already exists in the destination.
+      - If yes, rename it to make the name unique.
+      - Move the file to the corresponding destination directory.
+ 
+ 4. Event Handling Class:
+    - Create a class (`MoverHandler`) that inherits from `FileSystemEventHandler` 
+      to handle file system events.
+ 
+ 5. Event Handling Method:
+    - Override the `on_modified` method in the `MoverHandler` class.
+      - Iterate through entries in the source directory.
+      - For each entry:
+        - Check if it's a directory to be skipped or a temporary download file.
+        - Call functions to check the file type and move it accordingly.
+ 
+ 6. Observer Setup:
+    - Create instances of the `MoverHandler` class and `Observer` class.
+ 
+ 7. Observation Start:
+    - Start the observer to monitor the source directory for changes.
+      - While running, sleep to allow time for processing.
+ 
+ 8. Interrupt Handling:
+    - Handle keyboard interrupt (Ctrl+C) to stop the observer and exit gracefully.
+ 
+ 9. Logging Setup:
+    - Set up logging for informational messages.
+ 
+ 10. Script Execution:
+     - Execute the script to initiate the file sorting process.
+ 
+ Libraries:
+    - Ensure that the following Python packages are installed:
+      - `os`
+      - `shutil`
+      - `time`
+      - `logging`
+      - `watchdog`
+ 
+  </code>
+</pre>
+
+
+<h2>Algorithm Analysis</h2>
+<pre>
+<code>
+1. Time Complexity:
+    - The time complexity largely depends on the number of files in the source directory 
+    and the efficiency of file handling operations.
+    - The script processes files sequentially, resulting in a linear time 
+    complexity: O(n), where n is the number of files.
+
+2. Space Complexity:
+    - The space complexity is minimal, primarily using memory for variables and data structures.
+    - The script does not involve recursive calls or 
+      extensive data storage, resulting in constant space complexity: O(1).
+
+3. Event Handling Efficiency:
+    - The event-driven design using the `watchdog` library ensures efficient handling 
+      of file system events.
+    - The script reacts promptly to changes in the source directory, minimizing
+        the delay in file sorting.
+
+4. Modularity and Readability:
+    - The script is modular, with functions and classes serving specific purposes,
+      enhancing code readability and maintainability.
+
+5. Scalability:
+    - The algorithm is scalable, capable of handling a growing number of files or 
+    additional file types by extending the predefined lists.
+
+6. Error Handling:
+    - The script includes logging for informational messages and warnings, 
+    aiding in error identification and resolution.
+
+7. Interrupt Handling:
+    - The script gracefully handles keyboard interrupts, allowing the user to 
+    stop the file sorting process without issues.
+
+8. Dependencies:
+    - The script relies on external libraries (`watchdog`) for efficient file system monitoring.
+
+9. Platform Independence:
+    - The script's functionality is platform-independent, as it uses standard 
+    Python libraries compatible with various operating systems.
+
+10. Usability:
+    - The script is user-friendly, as it automates file sorting based on 
+      file types without requiring user intervention after initiation.
+
+Conclusion:
+The Filesorter Pro automation script demonstrates a well-structured and efficient
+  design, offering scalability, platform independence, and user-friendly file sorting capabilities.
+  The event-driven approach ensures real-time responsiveness, making it suitable 
+  for diverse file management scenarios.
+</code>
+</pre>
+
+<div>
+<h1> Github repostiry: </h1>
+
+<a href="https://github.com/Sra1995/personal_projects/blob/main/FileSorter_Pro/Auto_sort_download.py" target="_blank" style="color: #2196F3;"> Github repostiry link</a>
+</div>
+
+
+<button onclick="topFunction()" id="goTopBtn" title="Go to top">Top</button>
+
+<script src="/scripts/gotop.js"></script>
+</body>
+</html>
