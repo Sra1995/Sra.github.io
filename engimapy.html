@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project: Example Project</title>
+  <link rel="stylesheet" href="./style.css"> <!-- Link to your existing CSS file -->
+  <script defer src="scripts/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <link rel="icon" href="/asst/favicon.ico" type="image/x-icon"> <!-- 16x16-->
+  <link rel="icon" href="asst/portfolio_icon.ico" type="image/x-icon"> <!--48x48-->
+  <link rel="icon" href="asst/portfolio-96.png" type="image/png"> <!--png icon -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #fffcfc;
+    }
+
+    p {
+      color: #fffafa;
+    }
+
+    .graph {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    code {
+      display: block;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      text-align: left;
+    }
+  </style>
+</head>
+
+
+<body>
+    <!-- Navigation bar -->
+ <div class="container purple highlightTextOut"> 
+    <a alt="HOME" href="index.html">HOME</a>
+    <a alt="PORTFOLIO" href=index.html#PORTFOLIO>PORTFOLIO</a>
+    <a alt="ABOUT" href="index.html#about-text">ABOUT</a>
+    <a alt="CONTACT" href="index.html#CONTACT">CONTACT</a>
+  
+  </div>
+
+<div class="container">
+  <h1>EnigmaPy</h1>
+
+  <h2>Description</h2>
+  <p>
+    
+    EnigmaPy brings the historical Enigma machine to life in a modern Python script. The Enigma machine, famously known for 
+    its use by the German military during World War II, employed a complex system of rotors, reflectors, and plugboards to encode and 
+    decode messages. In this project, users have the opportunity to interact with a simplified Enigma machine through a terminal interface.
+    <br><br>
+    The main components of the Enigma machine, such as rotors, reflectors, and plugboards, are represented as classes in 
+    the Python script. Users can load rotor configurations from files, set up initial rotor positions, add plugboard pairs, 
+    and perform encryption and decryption on messages.
+  </p>
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/engima/menu.png" alt="initial menu" style="width: 100%- 100px; height: 30%;">
+    
+  </div>
+  <h6>Picture above showcase the program menu.</h6>
+
+  <h2> Example </h2>
+
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/engima/just_rotors.png" alt="just rotors result" style="width: 100%- 100px; height: 30%;">
+    
+  </div>
+  <h6>added rotors and selected their initials.</h6>
+
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/engima/pair1.png" alt="plugboard pair 1" style="width: 100%- 100px; height: 30%;">
+    
+  </div>
+  <h6>added first pair of plugboard</h6>
+
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/engima/pair2.png" alt="plugboard pair2" style="width: 100%- 100px; height: 30%;">
+    
+  </div>
+  <h6>added Second pair of plugboard</h6>
+
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/engima/pair3.png" alt="plugboard pair3" style="width: 100%- 100px; height: 30%;">
+    
+  </div>
+  <h6>added Third pair of plugboard</h6>
+
+
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/engima/final.png" alt="result after 3 pairs" style="width: 100%- 100px; height: 30%;">
+    
+  </div>
+  <h6>Result after adding 3 plugboard pairs</h6>
+
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/engima/decrypt.png" alt="decrypted encryped message to find orignial message" style="width: 100%- 100px; height: 30%;">
+    
+  </div>
+  <h6>decrypted message to find orignial message</h6>
+
+
+  <h2> Can you decrypt This one? </h2>
+
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/engima/mistery.png" alt="decrypted message" style="width: 100%- 100px; height: 30%;">
+    
+  </div>
+
+
+
+
+
+  <h2>Algorithm</h2>
+  <pre>
+  <code>
+1. Rotor Class:
+    - Initialize rotor with a given wiring configuration and starting position.
+    - Implement forward and backward methods for character encoding and decoding.
+
+2. Reflector Class:
+    - Initialize reflector with a given wiring configuration.
+    - Implement a reflect method for character reflection.
+
+3. Plugboard Class:
+    - Initialize plugboard with an initial mapping of characters to themselves.
+    - Implement methods to add, view, and remove plugboard pairs.
+    - Process method to apply plugboard mapping to characters.
+
+4. EnigmaMachine Class:
+    - Initialize Enigma machine with rotor filenames and reflector wiring.
+    - Implement methods to load rotors, set rotor positions, add plugboard 
+    - pairs, view plugboard, and perform encryption/decryption.
+
+5. User Interface (Main Function):
+    - Display a cool ASCII art header for the Enigma machine.
+    - Present a menu for users to:
+        * Set up rotors and initial positions.
+        * Add, view, and remove plugboard pairs.
+        * Encrypt and decrypt messages.
+        * Exit the Enigma machine.
+
+6.Cool Animation Function:
+    -Implement a function for printing text letter by letter with a specified 
+     delay for a cool animation effect.
+
+ Libraries:
+    - Ensure that the following Python packages are installed:
+      - `os`            # to allow interaction with the operating system
+      - `time`          # to allow time-related operations
+      - `csv`           # to allow interaction with .csv files
+      - `string`        # ascii_uppercase
+  </code>
+</pre>
+
+
+<h2>Algorithm Analysis</h2>
+<p>
+    The Enigma machine simulation operates with a time complexity that is predominantly linear. Loading rotor configurations from files and setting initial rotor positions have linear time complexity proportional to the number of rotors. The encryption and decryption processes iterate through the characters of the input message, resulting in linear time complexity relative to the length of the message.
+    <br><br>
+    The plugboard operations, including adding, viewing, and removing pairs, operate in constant time, as they involve simple dictionary manipulations. Overall, the simulation is designed for simplicity and ease of understanding, making it suitable for educational purposes and cryptographic exploration in a Python environment.
+</p>
+
+<p>
+The plugboard, also known as the Steckerbrett, allowed users to swap pairs of letters before and after the main encryption process 
+in the Enigma machine. The full list of options for the plugboard is essentially all possible pairs of letters. Since each plugboard pair
+involves two letters, there are a total of 26 × 25 / 2= 325 . 26×25/2=325 possible pairings.
+</p>
+
+<pre>
+    <code>
+AB, AC, AD, AE, AF, AG, AH, AI, AJ, AK, AL, AM, AN, AO, AP, AQ, AR, AS, AT, AU, AV, AW, AX, AY, AZ
+BC, BD, BE, BF, BG, BH, BI, BJ, BK, BL, BM, BN, BO, BP, BQ, BR, BS, BT, BU, BV, BW, BX, BY, BZ
+CD, CE, CF, CG, CH, CI, CJ, CK, CL, CM, CN, CO, CP, CQ, CR, CS, CT, CU, CV, CW, CX, CY, CZ
+DE, DF, DG, DH, DI, DJ, DK, DL, DM, DN, DO, DP, DQ, DR, DS, DT, DU, DV, DW, DX, DY, DZ
+EF, EG, EH, EI, EJ, EK, EL, EM, EN, EO, EP, EQ, ER, ES, ET, EU, EV, EW, EX, EY, EZ
+FG, FH, FI, FJ, FK, FL, FM, FN, FO, FP, FQ, FR, FS, FT, FU, FV, FW, FX, FY, FZ
+GH, GI, GJ, GK, GL, GM, GN, GO, GP, GQ, GR, GS, GT, GU, GV, GW, GX, GY, GZ
+HI, HJ, HK, HL, HM, HN, HO, HP, HQ, HR, HS, HT, HU, HV, HW, HX, HY, HZ
+IJ, IK, IL, IM, IN, IO, IP, IQ, IR, IS, IT, IU, IV, IW, IX, IY, IZ
+JK, JL, JM, JN, JO, JP, JQ, JR, JS, JT, JU, JV, JW, JX, JY, JZ
+KL, KM, KN, KO, KP, KQ, KR, KS, KT, KU, KV, KW, KX, KY, KZ
+LM, LN, LO, LP, LQ, LR, LS, LT, LU, LV, LW, LX, LY, LZ
+MN, MO, MP, MQ, MR, MS, MT, MU, MV, MW, MX, MY, MZ
+NO, NP, NQ, NR, NS, NT, NU, NV, NW, NX, NY, NZ
+OP, OQ, OR, OS, OT, OU, OV, OW, OX, OY, OZ
+PQ, PR, PS, PT, PU, PV, PW, PX, PY, PZ
+QR, QS, QT, QU, QV, QW, QX, QY, QZ
+RS, RT, RU, RV, RW, RX, RY, RZ
+ST, SU, SV, SW, SX, SY, SZ
+TU, TV, TW, TX, TY, TZ
+UV, UW, UX, UY, UZ
+VW, VX, VY, VZ
+WX, WY, WZ
+XY, XZ
+YZ
+    </code>
+</pre>
+
+
+
+
+<div>
+<h1> Github repostiry: </h1>
+
+<a href="https://github.com/Sra1995/personal_projects/tree/main/Engima" target="_blank" style="color: #2196F3;"> Github repostiry link</a>
+</div>
+
+
+<button onclick="topFunction()" id="goTopBtn" title="Go to top">Top</button>
+
+<script src="scripts/gotop.js"></script>
+</div>
+</body>
+
+
+<footer class="footer">
+
+  <!-- galaxy animation/canva-->
+  <div class"galaxy">
+    <canvas id="canvas"></canvas>
+  </div>
+  <p>&copy; 2023 Sajjad Alsaffar. All rights reserved.</p>
+
+</footer>
+</html>
