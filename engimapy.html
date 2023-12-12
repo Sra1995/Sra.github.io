@@ -10,6 +10,10 @@
   <link rel="icon" href="/asst/favicon.ico" type="image/x-icon"> <!-- 16x16-->
   <link rel="icon" href="asst/portfolio_icon.ico" type="image/x-icon"> <!--48x48-->
   <link rel="icon" href="asst/portfolio-96.png" type="image/png"> <!--png icon -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -23,7 +27,7 @@
       padding: 20px;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, ol, ul {
       color: #fffcfc;
     }
 
@@ -187,15 +191,67 @@
 <p>
     The Enigma machine simulation operates with a time complexity that is predominantly linear. Loading rotor configurations from files and setting initial rotor positions have linear time complexity proportional to the number of rotors. The encryption and decryption processes iterate through the characters of the input message, resulting in linear time complexity relative to the length of the message.
     <br><br>
-    The plugboard operations, including adding, viewing, and removing pairs, operate in constant time, as they involve simple dictionary manipulations. Overall, the simulation is designed for simplicity and ease of understanding, making it suitable for educational purposes and cryptographic exploration in a Python environment.
+    The plugboard operations, including adding, viewing, and removing pairs, operate in constant time, as they involve simple dictionary manipulations(self.mapping). Overall, the simulation is designed for simplicity and ease of understanding, making it suitable for educational purposes and cryptographic exploration in a Python environment.
 </p>
+<br><br><br>
+<h2> Counting the Possible Plugboard Settings</h2>
+
+<p>    The formula used for calculating the number of possible plugboard pairings is based on the concept of combinations and permutations. Here's a breakdown of the formula:
+</p>
+<p style="font-size: xx-large;"><b>
+  n!<br>
+  ---------<br>
+  ((n-2m)! * m! * 2^m)<br>
+</b></p>
+<p style="text-align: left;"><b>- n!:</b> Represents the factorial of n, which is the product of all positive integers up to n.<br>
+  <b>- (n-2m)!:</b> Represents the factorial of (n-2m), which is used to account for the permutations of unpaired letters after 2m letters have been paired.<br>
+  <b>- m!:</b> Represents the factorial of m, accounting for the permutations of the paired letters.<br>
+  <b>- 2^m:</b> Represents the number of ways the paired letters can be connected (since each pair can be connected in two ways).<br></p>
+
+<p>The formula is derived from the idea that for each step in choosing pairs, the number of available choices decreases. Here's how it is applied:
+</p>
+<ol style="text-align: left;">
+  <li>Choose 2 letters for the first pair (C(n,2)).</li>
+  <li>For each of these, choose 2 letters for the second pair (C(n-2,2)).</li>
+  <li>Repeat this process m times.</li>
+  <li>Multiply by 2^m for the two possible connections for each pair.</li>
+</ol>
 
 <p>
-The plugboard, also known as the Steckerbrett, allowed users to swap pairs of letters before and after the main encryption process 
-in the Enigma machine. The full list of options for the plugboard is essentially all possible pairs of letters. Since each plugboard pair
-involves two letters, there are a total of 26 × 25 / 2= 325 . 26×25/2=325 possible pairings.
+  When n represents the number of distinct objects (letters), and m represents the number of pairs, the formula calculates the total number of ways to arrange the letters when 2m are paired.
+<br><br>
+  For example, in the case of m = 10 pairs and n = 26 letters, the formula calculates the number of ways to arrange the letters after 10 pairs have been connected, considering the permutations and combinations involved.
+  
+
 </p>
 
+<h2>Possible Combinations of Plugboard Pairs:</h2>
+<p style="text-align: left;">
+  <b>For 1 pair (m = 1, n = 26):</b>
+  (26! / ((26-2*1)! * 1! * 2^1)) = (26! / (24! * 1! * 2)) = 325<br>
+  <b>For 5 pairs (m = 5, n = 26):</b>
+  (26! / ((26-2*5)! * 5! * 2^5)) = (26! / (16! * 5! * 32)) = 5,019,589,575<br>
+  <b>For 10 pairs (m = 10, n = 26):</b>
+  (26! / ((26-2*10)! * 10! * 2^10)) = (26! / (6! * 10! * 2^10)) = 150,738,274,937,250<br>
+  <b>For 11 pairs (m = 11, n = 26):</b>
+  (26! / ((26-2*11)! * 11! * 2^11)) = (26! / (4! * 11! * 2^11)) = 205,552,193,096,250<br>
+  <b>For 12 pairs (m = 12, n = 26):</b>
+  (26! / ((26-2*12)! * 12! * 2^12)) = (26! / (2! * 12! * 2^12)) = 102,776,096,548,125<br>
+</p>
+<br><br>
+<h2>So why did they use 10 and not 11?</h2>
+<p>During World War II, the German Enigma machines typically used a plugboard with 10 pairs of letters connected.
+   This means that 10 pairs of letters were swapped before and after the signal passed through the rotors and reflector. 
+   The reason for using 10 pairs was likely a balance between increasing the complexity of the encryption and practical considerations such as ease of use 
+   for the machine operators.
+<br><br>
+Some might wonder why the number of possible combinations is so large, but start to decreases when hitting 12 pairs and above.
+The number of possible plugboard settings decreases when using 12 pairs 
+compared to 11 pairs because the formula for calculating the number of combinations involves dividing by a factor that increases more rapidly.
+</p>
+
+
+<h2> All Possible Plugboard Pairs</h2>
 <pre>
     <code>
 AB, AC, AD, AE, AF, AG, AH, AI, AJ, AK, AL, AM, AN, AO, AP, AQ, AR, AS, AT, AU, AV, AW, AX, AY, AZ
@@ -223,6 +279,79 @@ VW, VX, VY, VZ
 WX, WY, WZ
 XY, XZ
 YZ
+
+Total: 325, which points to the flaw that is a letter couldn't be itself.
+
+# List to store the combinations
+combinations = []
+
+# Loop to generate the combinations
+for i in range(ord('A'), ord('Z')+1):
+    row_combinations = []
+    for j in range(i+1, ord('Z')+1):
+        row_combinations.append(chr(i) + chr(j))
+    combinations.append(", ".join(row_combinations))
+
+# Print the combinations
+print("\n".join(combinations))
+
+# to count them before joining them in rows:
+# List to store the combinations
+combinations = []
+
+# Loop to generate the combinations
+for i in range(ord('A'), ord('Z')+1):
+    for j in range(i+1, ord('Z')+1):
+        combinations.append(chr(i) + chr(j))
+
+# Print the combinations
+print(combinations)
+
+# Print the count of combinations
+print("Count:", len(combinations))
+
+
+
+if a letter could be itself, then possible pairs are:
+
+AA, AB, AC, AD, AE, AF, AG, AH, AI, AJ, AK, AL, AM, AN, AO, AP, AQ, AR, AS, AT, AU, AV, AW, AX, AY, AZ
+BB, BC, BD, BE, BF, BG, BH, BI, BJ, BK, BL, BM, BN, BO, BP, BQ, BR, BS, BT, BU, BV, BW, BX, BY, BZ
+CC, CD, CE, CF, CG, CH, CI, CJ, CK, CL, CM, CN, CO, CP, CQ, CR, CS, CT, CU, CV, CW, CX, CY, CZ
+DD, DE, DF, DG, DH, DI, DJ, DK, DL, DM, DN, DO, DP, DQ, DR, DS, DT, DU, DV, DW, DX, DY, DZ
+EE, EF, EG, EH, EI, EJ, EK, EL, EM, EN, EO, EP, EQ, ER, ES, ET, EU, EV, EW, EX, EY, EZ
+FF, FG, FH, FI, FJ, FK, FL, FM, FN, FO, FP, FQ, FR, FS, FT, FU, FV, FW, FX, FY, FZ
+GG, GH, GI, GJ, GK, GL, GM, GN, GO, GP, GQ, GR, GS, GT, GU, GV, GW, GX, GY, GZ
+HH, HI, HJ, HK, HL, HM, HN, HO, HP, HQ, HR, HS, HT, HU, HV, HW, HX, HY, HZ
+II, IJ, IK, IL, IM, IN, IO, IP, IQ, IR, IS, IT, IU, IV, IW, IX, IY, IZ
+JJ, JK, JL, JM, JN, JO, JP, JQ, JR, JS, JT, JU, JV, JW, JX, JY, JZ
+KK, KL, KM, KN, KO, KP, KQ, KR, KS, KT, KU, KV, KW, KX, KY, KZ
+LL, LM, LN, LO, LP, LQ, LR, LS, LT, LU, LV, LW, LX, LY, LZ
+MM, MN, MO, MP, MQ, MR, MS, MT, MU, MV, MW, MX, MY, MZ
+NN, NO, NP, NQ, NR, NS, NT, NU, NV, NW, NX, NY, NZ
+OO, OP, OQ, OR, OS, OT, OU, OV, OW, OX, OY, OZ
+PP, PQ, PR, PS, PT, PU, PV, PW, PX, PY, PZ
+QQ, QR, QS, QT, QU, QV, QW, QX, QY, QZ
+RR, RS, RT, RU, RV, RW, RX, RY, RZ
+SS, ST, SU, SV, SW, SX, SY, SZ
+TT, TU, TV, TW, TX, TY, TZ
+UU, UV, UW, UX, UY, UZ
+VV, VW, VX, VY, VZ
+WW, WX, WY, WZ
+XX, XY, XZ
+YY, YZ
+ZZ
+Total : 676
+
+pairs = []
+for i in range(ord('A'), ord('Z')+1):
+    for j in range(ord('A'), ord('Z')+1):
+        pairs.append(chr(i) + chr(j))
+
+count = len(pairs)
+print(pairs)
+print(count)
+
+** easier way of doing it :D
     </code>
 </pre>
 
