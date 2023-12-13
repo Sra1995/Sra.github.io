@@ -16,9 +16,9 @@
 }
 
 /* Lock the aspect ratio for different display resolutions (industry standard) */
-@media screen and (min-resolution: 192dpi) {
+@media screen and (min-width: 1024px) {
   .project {
-    flex-basis: calc(25% - 20px); /* 4 columns for high-resolution displays */
+    flex-basis: calc(30% - 20px); /* 4 columns for high-resolution displays */
   }
 }
 
@@ -239,7 +239,7 @@ canvas {
 }
 
 .project {
-  flex-basis: calc(33.33% - 20px);
+
   margin: 10px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
