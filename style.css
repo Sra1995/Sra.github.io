@@ -5,10 +5,7 @@
 @media screen and (max-width: 1284px) and (min-aspect-ratio: 19.5/9) {
   body {
     background-image: url('asst/pillar_of_creation-min.jpeg') ;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-size: 100% 100%;
     background-attachment: fixed;
     margin: 0;
 
@@ -25,10 +22,8 @@
 
   body {
     background-image: url('asst/pillar_of_creation-min.jpeg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+
+    background-size: 100% 100%;
     background-attachment: fixed;
     margin: 0;
  
