@@ -8,9 +8,7 @@
     background-size: cover;
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
-    -webkit-background-size: cover; /* Safari and Chrome */
-    -moz-background-size: cover; /* Firefox */
-    -o-background-size: cover; /* Opera */
+    -webkit-background-size: cover;
   }
 
   .project {
@@ -26,9 +24,7 @@
     background-size: cover;
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
-    -webkit-background-size: cover; /* Safari and Chrome */
-    -moz-background-size: cover; /* Firefox */
-    -o-background-size: cover; /* Opera */
+    -webkit-background-size: cover;
   }
 
   .project {
@@ -44,9 +40,7 @@
     background-size: cover;
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
-    -webkit-background-size: cover; /* Safari and Chrome */
-    -moz-background-size: cover; /* Firefox */
-    -o-background-size: cover; /* Opera */
+    -webkit-background-size: cover;
   }
 
   .project {
@@ -60,23 +54,19 @@
     background-size: cover;
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
-    -webkit-background-size: cover; /* Safari and Chrome */
-    -moz-background-size: cover; /* Firefox */
-    -o-background-size: cover; /* Opera */
+    -webkit-background-size: cover;
   }
 
   .project {
     flex-basis: calc(33.33% - 20px); /* 3 columns for standard-resolution displays */
   }
 }
-
+/*
 body {
   background-image: url('asst/carina_nircam_final-5mb.jpg');
   background-size: cover;
-  background-attachment: fixed; /* Keeps the background image fixed while scrolling */
-  margin: 0;
-}
-
+  background-attachment: fixed; 
+  margin: 0;}*/
 
 /* Update the .project section's background to be transparent */
 .project {
