@@ -5,7 +5,7 @@
 @media screen and (max-width: 1284px) and (min-aspect-ratio: 19.5/9) {
   body {
     background-image: url('asst/carina_nircam_final-5mb_1_optimized.jpg');
-    background-size: cover;
+    background-size: auto;
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
     -webkit-background-size: auto;
@@ -21,7 +21,7 @@
 
   body {
     background-image: url('asst/carina_nircam_final-5mb_1_optimized.jpg');
-    background-size: cover;
+    background-size: auto;
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
     -webkit-background-size: auto;
@@ -40,7 +40,7 @@
     background-size: cover;
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
-    -webkit-background-size: auto;
+    -webkit-background-size: cover;
   }
 
   .project {
@@ -54,7 +54,7 @@
     background-size: cover;
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
-    -webkit-background-size: auto;
+    -webkit-background-size: cover;
   }
 
   .project {
