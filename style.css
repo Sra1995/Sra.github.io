@@ -9,6 +9,7 @@
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
     -webkit-background-size: cover;
+    background-repeat: repeat-y;
   }
 
   .project {
@@ -25,6 +26,7 @@
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
     -webkit-background-size: cover;
+    background-repeat: repeat-y;
   }
 
   .project {
@@ -41,6 +43,7 @@
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
     -webkit-background-size: cover;
+    background-repeat: repeat-y;
   }
 
   .project {
@@ -55,6 +58,7 @@
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
     -webkit-background-size: cover;
+    background-repeat: repeat-y;
   }
 
   .project {
