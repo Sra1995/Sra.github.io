@@ -6,9 +6,10 @@
   body {
     background-image: url('asst/pillar_of_creation-min.jpeg');
     background-size: cover;
-    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+    background-attachment: fixed;
     margin: 0;
     -webkit-background-size: cover;
+    
   }
 
   .project {
@@ -22,7 +23,7 @@
   body {
     background-image: url('asst/pillar_of_creation-min.jpeg');
     background-size: cover;
-    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+    background-attachment: fixed;
     margin: 0;
     -webkit-background-size: cover;
   }
@@ -61,12 +62,10 @@
     flex-basis: calc(33.33% - 20px); /* 3 columns for standard-resolution displays */
   }
 }
-/*
+
 body {
-  background-image: url('asst/carina_nircam_final-5mb.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  margin: 0;}*/
+  overflow: auto;
+}
 
 /* Update the .project section's background to be transparent */
 .project {
