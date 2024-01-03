@@ -4,10 +4,13 @@
 /* Lock the aspect ratio for iPhone 12 Pro Max */
 @media screen and (max-width: 1284px) and (min-aspect-ratio: 19.5/9) {
   body {
-    background-image: url('asst/pillar_of_creation-min.jpeg');
-    background-size:100%;
+    background-image: url('asst/pillar_of_creation-min.jpeg') ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     width:100%;
-    background-attachment: scroll, local;
+    background-attachment: fixed;
     margin: 0;
 
     
@@ -23,9 +26,12 @@
 
   body {
     background-image: url('asst/pillar_of_creation-min.jpeg');
-    background-size:100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     width:100%;
-    background-attachment: scroll, local;
+    background-attachment: fixed;
     margin: 0;
  
   }
