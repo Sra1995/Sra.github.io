@@ -21,7 +21,7 @@
 
   body {
     background-image: url('asst/carina_nircam_final-5mb_1_optimized.jpg');
-    background-size: 30%;
+    background-size: cover;
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0;
     -webkit-background-size: cover;
