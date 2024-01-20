@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project: Example Project</title>
+  <link rel="stylesheet" href="./style.css"> <!-- Link to your existing CSS file -->
+  <script defer src="scripts/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <link rel="icon" href="/asst/favicon.ico" type="image/x-icon"> <!-- 16x16-->
+  <link rel="icon" href="asst/portfolio_icon.ico" type="image/x-icon"> <!--48x48-->
+  <link rel="icon" href="asst/portfolio-96.png" type="image/png"> <!--png icon -->
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3, h4, h5, h6, ol, ul {
+      color: #fffcfc;
+    }
+
+    p {
+      color: #fffafa;
+    }
+
+    .graph {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    code {
+      display: block;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      text-align: left;
+    }
+  </style>
+</head>
+
+
+<body>
+    <!-- Navigation bar -->
+ <div class="container purple highlightTextOut"> 
+    <a alt="HOME" href="index.html">HOME</a>
+    <a alt="PORTFOLIO" href=index.html#PORTFOLIO>PORTFOLIO</a>
+    <a alt="ABOUT" href="index.html#about-text">ABOUT</a>
+    <a alt="CONTACT" href="index.html#CONTACT">CONTACT</a>
+  
+  </div>
+
+<div class="container">
+  <h1>Titanic - Machine Learning from Disaster</h1>
+
+  <h2>Objective</h2>
+  <p>
+    I have been wanting to learn machine learning for a while now, and I thought this would be a good opportunity to start. It is from Kaggle
+    and it is a competition where you have to predict if a passenger survived the sinking of the Titanic or not.
+    <h2>Learning Goals</h2>
+    <ul style = "list-style-type: none;">
+      <li>Learn random forest tree model</li>
+      <li>Learn something from the sklearn package</li>
+    </ul>
+  </p>
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/Titanic/randomforset_model_diagram.png" alt="Example Graph" style="width: 100%-200px; height: 100%;max-height: 50vh;">
+    
+  </div>
+  <h6>Picture above shows the Random forest model in much easier way to understand</h6>
+
+  <h2>Python Code</h2>
+  <pre>
+  <code>
+  import numpy as np # linear alegbra
+  import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+  from sklearn.ensemble import RandomForestClassifier # random forest model
+  
+  
+  
+  # Load the Data
+  train_data = pd.read_csv('train.csv')
+  train_data.head()
+  
+  test_data = pd.read_csv('test.csv')
+  test_data.head()
+  
+  # Data Exploration & assumptions
+  # file gender_submission.csv assumes all females survived and all males died
+  
+  women = train_data.loc[train_data.Sex == 'female']['Survived']
+  rate_women = sum(women)/len(women)
+  
+  print("% of women who survived:", rate_women)
+  
+  men = train_data.loc[train_data.Sex == 'male']['Survived']
+  rate_men = sum(men)/len(men)
+  
+  print("% of men who survived:", rate_men)
+  
+  # random forest model
+  
+  y = train_data["Survived"]
+  
+  features = ["Pclass","Sex","SibSp","Parch"]
+  X = pd.get_dummies(train_data[features])
+  X_test = pd.get_dummies(test_data[features])
+  
+  model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=1)
+  model.fit(X, y)
+  predictions = model.predict(X_test)
+  
+  output = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': predictions})
+  output.to_csv('submission.csv', index=False)
+  print("Your submissino was successfully saved")
+  
+  Output in terminal:
+  % of women who survived: 0.7420382165605095 # proves that the assumptions wasn't true for women
+  % of men who survived: 0.18890814558058924  # proves that the assumptions wasn't true for men
+  Your submissino was successfully saved  
+  </code>
+</pre>
+
+
+<h2>Algorithm Steps</h2>
+
+<p>
+  <ol style="list-style-position: inside; text-align: left;">
+    <b><li>Load the data</li></b>
+    <p>Since the data in CSV file and are going to use two different sets train_data and test_data, we can simply just load the csv files and assign them to variables</p>
+    <b><li>Explore the data</li></b>
+    <p>file gender_submission.csv assumes all females survived and all males died so in we can simply check that rather than blindly believe an assumptions</p>
+    <b><li>Build the model</li></b>
+    <p>Create random forest model as displayed in image above</p>
+    <b><li>Make predictions</li></b>
+    <p>Use the model to make predictions on the test_data</p>
+    <b><li>Submit the results</li></b>
+    <p>Save the results in a CSV file submission.csv</p>
+  </ol>
+</p>
+
+<div>
+<h1> Referrence </h1>
+
+<a href="https://www.kaggle.com/competitions/titanic/data" target="_blank" style="color: #2196F3;"> Titanic - Machine Learning from Disaster Dataset link</a>
+<br><br>
+
+<p> Disclaimer: I didn't come up with all this on my own , This was from a tutorial on Kaggle as intorductino to machine learning from their small/short courses</p>
+</div>
+
+
+<button onclick="topFunction()" id="goTopBtn" title="Go to top">Top</button>
+
+<script src="scripts/gotop.js"></script>
+</div>
+</body>
+
+
+<footer class="footer">
+
+  <!-- galaxy animation/canva-->
+  <div class"galaxy">
+    <canvas id="canvas"></canvas>
+  </div>
+  <p>&copy; 2023 Sajjad Alsaffar. All rights reserved.</p>
+
+</footer>
+</html>
