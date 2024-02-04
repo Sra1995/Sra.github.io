@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Command-Line Calculator</title>
+  <link rel="stylesheet" href="./style.css"> <!-- Link to your existing CSS file -->
+  <script defer src="scripts/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <link rel="icon" href="/asst/favicon.ico" type="image/x-icon"> <!-- 16x16-->
+  <link rel="icon" href="asst/portfolio_icon.ico" type="image/x-icon"> <!--48x48-->
+  <link rel="icon" href="asst/portfolio-96.png" type="image/png"> <!--png icon -->
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3, h4, h5, h6, ol, ul {
+      color: #fffcfc;
+    }
+
+    p {
+      color: #fffafa;
+    }
+
+    .graph {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    code {
+      display: block;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      text-align: left;
+    }
+  </style>
+</head>
+
+
+<body>
+    <!-- Navigation bar -->
+ <div class="container purple highlightTextOut"> 
+    <a alt="HOME" href="index.html">HOME</a>
+    <a alt="PORTFOLIO" href=index.html#PORTFOLIO>PORTFOLIO</a>
+    <a alt="ABOUT" href="index.html#about-text">ABOUT</a>
+    <a alt="CONTACT" href="index.html#CONTACT">CONTACT</a>
+  
+  </div>
+
+<div class="container">
+  <h1>Titanic - Machine Learning from Disaster</h1>
+
+  <h2>Objective</h2>
+  <p>
+    This was the first lab in a series of labs related to projects for Operating systems. The projects for OS course were due every 3 weeks starting from the 3rd week of the semester.
+     The first lab was to create a command-line calculator using C programming language. 
+     The calculator should be able to perform basic arithmetic operations( 6 to be specific) addition, subtraction, multiplication, and division(regular, integer, and remainder).
+      The calculator should also be able to display two floating-point number for regular divsion and display an error message if the user tries to divide by zero. 
+      In addition, I had the freedom to add more features to the calculator if I wanted to, but i choose to stick making sure the calculator works as requested and handle the edge cases such user inputing 99a99 or -123 since i was limited only to Integer data type.
+    <h2>Lab Goals</h2>
+    <ul style = "list-style-type: none;">
+      <li>practice for taking input from command line in C compared to Python</li>
+      <li>practice to get into the habit of writing a very basic pseduocode before even coding anything</li>
+    </ul>
+  </p>
+  <div class="graph">
+    <!-- Include your graph or visualization here -->
+    <img src="asst/projects/CL_calc.png" alt="Example Graph" style="width: 100%-200px; height: 100%;max-height: 50vh;">
+    
+  </div>
+  <h6>Picture above shows usage of the calculator</h6>
+
+  <h2>Code</h2>
+  <pre>
+<code>
+/*
+CSC521 Operating Systems 
+Lab #2: Command Line Calculator
+Programmers: Sajjad Alsaffar
+Professor: Dr. Lee
+Date created: 01/25/2023
+Date modified: 01/28/2023
+*/
+
+#include stdio.h 
+#include stdlib.h                                                                                           // for atoi
+#include string.h                                                                                           // for strcmp
+#include ctype.h                                                                                            // for isdigit
+
+int is_valid_integer(const char *str) {                                                                     // function to validate if all characters in a string are digits != 123abc456
+                                                                                                            // Check if the string is empty or null
+    if (str == NULL || *str == '\0') {                                                                      // if the string is empty or null
+        return 0;                                                                                           // Return 0 to indicate an error (empty or null string)
+    }
+
+                                                                                                            // Handle optional negative sign
+    if (*str == '-' || *str == '+') {                                                                       // if the first character is a negative or positive sign
+        str++;                                                                                              // Move to next character in string
+    }
+
+    while (*str != '\0') {                                                                                  // while the string is not empty
+        if (!isdigit(*str)) {                                                                               // if the character is not a digit
+            return 0;                                                                                       // Return 0 to indicate an error (non-digit character found)
+        }
+        str++;                                                                                              // Move to the next character in the string
+    }
+
+    return 1;                                                                                               // Return 1 to indicate success (all characters are digits)
+}
+
+int main(int argc, char *argv[]) {
+                                                                                                            // Check if the correct number of command line arguments are provided
+    if (argc != 4) {                                                                                        // 4 arguments are needed ./program num1 num2 operator
+        printf("Usage: %s num1 num2 operator\n", argv[0]);
+        return 1;                                                                                           // exit with error
+    }
+
+    // Validate num1 and num2
+    if (!is_valid_integer(argv[1]) || !is_valid_integer(argv[2])) {
+        fprintf(stderr, "Invalid input for num1 or num2. Please enter valid integers.\n");
+        return 1;
+    }
+
+                                                                                                            // Convert command line arguments to integers
+    int num1 = atoi(argv[1]);                                                                               // atoi converts first string to integer num1
+    int num2 = atoi(argv[2]);                                                                               // atoi converts second string to integer num2
+
+                                                                                                            // Check if conversion was successful
+    if (num1 == 0 && argv[1][0] != '0') {                                                                   // argv[1][0] != '0' checks if the first character of the string is not 0
+        printf("Invalid input for num1. Please enter a valid integer.\n");
+        return 1;                                                                                           // exit with error
+    }
+    if (num2 == 0 && argv[2][0] != '0') {                                                                   // argv[2][0] != '0' checks if the first character of the string is not 0
+        printf("Invalid input for num2. Please enter a valid integer.\n");
+        return 1;                                                                                           // exit with error
+    }
+
+                                                                                                            // Get the operator
+    char *operator = argv[3];                                                                               // Get the operator from the command line +,-,*,/,%,//
+
+                                                                                                            // Perform the operation based on the selected operator
+    if (strcmp(operator, "+") == 0) {                                                                       // strcmp compares the string operator with the string "+"
+        printf("%d + %d = %d\n", num1, num2, num1 + num2);                                                  // adds num1 to num2 and display the result
+    } else if (strcmp(operator, "-") == 0) {                                                                // strcmp compares the string operator with the string "-"
+        printf("%d - %d = %d\n", num1, num2, num1 - num2);                                                  // subtracts num2 from num1 and display the result
+    } else if (strcmp(operator, "*") == 0) {                                                                // strcmp compares the string operator with the string "*"
+        printf("%d * %d = %d\n", num1, num2, num1 * num2);                                                  // multiplies num1 by num2 and display the result
+    } else if (strcmp(operator, "/") == 0) {                                                                // strcmp compares the string operator with the string "/"
+        if (num2 == 0) {                                                                                    // Check for division by zero
+            printf("Division by zero is not allowed.\n");                                                   // Display error message division by zero is not allowed
+            return 1;                                                                                       // exit with error
+        }
+        printf("%d / %d = %.2f\n", num1, num2, (float)num1 / num2);                                         // divides num1 by num2 and display the result as float 2 decimal places as requested
+    } else if (strcmp(operator, "%") == 0) {                                                                // strcmp compares the string operator with the string "%"
+        if (num2 == 0) {                                                                                    // Check for division by zero
+            printf("Modulo by zero is not allowed.\n");                                                     // Display error message modulo by zero is not allowed
+            return 1;                                                                                       // exit with error
+        }
+        printf("%d %% %d = %d\n", num1, num2, num1 % num2);                                                 // calculates the remainder of num1 divided by num2 and display the result
+    } else if (strcmp(operator, "//") == 0) {                                                               // strcmp compares the string operator with the string "//"
+        if (num2 == 0) {                                                                                    // Check for division by zero
+            printf("Integer division by zero is not allowed.\n");                                           // Display error message integer division by zero is not allowed
+            return 1;                                                                                       // exit with error
+        }
+        printf("%d // %d = %d\n", num1, num2, num1 / num2);                                                 // calculates the integer division of num1 by num2 and display the result as integer no decimal places
+    } else {
+        printf("Invalid operator. Supported operators are +, -, *, /, %%, //.\n");                          // Display error message invalid operator
+        printf("Note: depending on shell being used for multiplication you might need to do '*' \n");       // Display Note message for multiplication
+        return 1;                                                                                           // exit with error
+    }
+
+    return 0;                                                                                               // exit with success
+}
+
+// Note i initially built it using switch but then i ran into a problem with the taking the '//' which was required to be used for int division.
+// I managed to work around it by using if else statements and it worked fine. 
+// However, I didn't look the elegence of the code so i decided to switch back to if else statements.
+  </code>
+</pre>
+
+
+<h2>Algorithm Steps</h2>
+
+<p>
+
+    <ul style="list-style-position: inside; text-align: left;">
+      <li>Check if the correct number of command line arguments are provided</li>
+      <li>Validate num1 and num2</li>
+      <li>Convert command line arguments to integers</li>
+      <li>Check if conversion was successful</li>
+      <li>Get the operator</li>
+      <li>Perform the operation based on the selected operator</li>
+    </ul>
+
+</p>
+
+<div>
+<p> <b>Disclaimer</b> : I didn't use C language until i had to , which was in fall of 2023, so to be able to write this and debug it in reasonable time felt good without using much resources :D</p>
+</div>
+
+
+<button onclick="topFunction()" id="goTopBtn" title="Go to top">Top</button>
+
+<script src="scripts/gotop.js"></script>
+</div>
+</body>
+
+
+<footer class="footer">
+
+  <!-- galaxy animation/canva-->
+  <div class"galaxy">
+    <canvas id="canvas"></canvas>
+  </div>
+  <p>&copy; 2023 Sajjad Alsaffar. All rights reserved.</p>
+
+</footer>
+</html>
